@@ -6,7 +6,10 @@ let pencil = canvas.getContext("2d"); // This gives you the drawing context, lik
 
 function gameLoop() {
     //erase the canvas
-    // pencil.clearRect(0, 0, canvas.width, canvas.height);
+    pencil.clearRect(0, 0, canvas.width, canvas.height);
+
+    testPipe.move();
+    testPipe.draw();
 }
 
 setInterval(gameLoop, 50);
