@@ -16,6 +16,11 @@ function gameLoop() {
 
     bird.gravity();
     bird.draw();
+
+    let wasHit = bird.isHitByPipe(testPipe);
+    if(wasHit) {
+        console.log("you're dead, comrade!");
+    }
 }
 
 setInterval(gameLoop, 50);
