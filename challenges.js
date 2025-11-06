@@ -31,13 +31,18 @@ function raiseScore() {
 setInterval(raiseScore, 1000);
 
 function detectClick() {
-    console.log("CLicked!")
+    bird.flap();
+}
+
+function detectKey() {
+    bird.flap();
+
 }
 
 canvas.addEventListener("click", detectClick);
+document.addEventListener("keypress", detectKey)
 
 let testPipe = new PipeObstacle(canvas, pencil);
 testPipe.draw();
 
 let bird = new Bird(canvas, pencil);
-bird.chirp();
