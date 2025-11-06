@@ -17,7 +17,7 @@ let score = 0;
 function raiseScore() {
     score += 1;
     let scoreElement = document.getElementById("scoreDisplay");
-    scoreElement.innerHTML = score;
+    scoreElement.innerHTML = "SCORE:" + score;
 }
 setInterval(raiseScore, 1000);
 

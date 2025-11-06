@@ -3,7 +3,8 @@
 export class PipeObstacle {
 
     x = 0;
-    y = 50;
+    y = 5;
+    height = 500;
     canvas;
     pencil;
 
@@ -17,9 +18,15 @@ export class PipeObstacle {
     }
 
     draw() {
+
         //top pipe
         this.pencil.fillStyle = 'blue'; // Set the fill color
-        this.pencil.fillRect(this.x, this.y, 100, 75); // x, y, w, h
+        this.pencil.fillRect(
+            this.x, 
+            this.y - (this.height - this.y), 
+            100, 
+            this.height
+        ); // x, y, w, h
 
         //bottom pipe
         this.pencil.fillStyle = 'violet'; // Set the fill color
