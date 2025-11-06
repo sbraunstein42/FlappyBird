@@ -13,6 +13,8 @@ function gameLoop() {
    
     testPipe.move();
     testPipe.draw();
+
+    bird.gravity();
     bird.draw();
 }
 

@@ -7,11 +7,13 @@ export class Bird {
     canvas;
     pencil;
 
+    ySpeed = 1;
+    maximumYSpeed = 20;
+
     constructor(canvas, pencil) {
         this.canvas = canvas;
         this.pencil = pencil;
     }
-
 
     draw() {
         //top pipe
@@ -24,10 +26,14 @@ export class Bird {
         ); // x, y, w, h
     }
 
+    gravity() {
+        this.y += this.ySpeed
+        this.ySpeed *= 1.2;
 
+        if(this.ySpeed > this.maximumYSpeed) {
+            this.ySpeed = this.maximumYSpeed;
+        }
 
-    chirp() {
-        console.log("Cheep!");
     }
 
 }
