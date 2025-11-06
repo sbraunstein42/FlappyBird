@@ -4,11 +4,11 @@ export class PipeObstacle {
 
     x = 300;
     y = 100;
-    height = 500;
+    height; //height will be dynamic
     width = 100;
     canvas;
     pencil;
-    speed = 10;
+    speed = 0;
     gap = 150;
 
     //pipe parts
@@ -18,6 +18,8 @@ export class PipeObstacle {
     constructor(canvas, pencil) {
         this.pencil = pencil;
         this.canvas = canvas;
+
+        this.height = canvas.height;
     }
 
     draw() {
@@ -43,8 +45,10 @@ export class PipeObstacle {
     move() {
         this.x -= this.speed;
 
+        //check if we need to recycle
         if(this.x < -this.width) {
             this.x = this.canvas.width;
+            this.y = Math.random() * this.canvas.height;
         }
 
 
